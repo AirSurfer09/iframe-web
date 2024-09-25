@@ -17,9 +17,9 @@ function App() {
   // Receive messages from the parent
   useEffect(() => {
     const messageHandler = (event: MessageEvent) => {
-      if (event.origin !== "http://your-parent-website.com") {
+      if (event.origin) {
         // Verify the origin for security (replace with your actual parent domain)
-        return;
+        console.log(event.origin)
       }
       // Set the received message
       setMessageFromParent(event.data);
